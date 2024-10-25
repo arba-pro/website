@@ -8,9 +8,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      fontFamily: {
+        sans: ["var(--font-geist-sans)", "sans-serif"],
+        mono: ["var(--font-geist-mono)", "monospace"],
+      },
+      colors: {},
+      backgroundImage: {
+        "hero-image": "url('/website/londe/londe-6.jpg')",
       },
     },
   },
