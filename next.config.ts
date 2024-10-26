@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
   images: { unoptimized: true },
   output: "export",
   basePath: "/website",
+  trailingSlash: true,
 };
 
 const withMDX = createMDX({
