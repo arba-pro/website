@@ -5,8 +5,7 @@ import Realisation from "@/types/realisation";
 
 import { getRealisations } from "@/lib/mdx";
 import { formatDate } from "@/lib/utils";
-import { MDXRemote } from "next-mdx-remote/rsc";
-import { useMDXComponents } from "@/mdx-components";
+
 import { CustomMDX } from "@/components/mdx-remote";
 
 type Params = Promise<{ slug: string }>;
