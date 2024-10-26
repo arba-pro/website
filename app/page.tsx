@@ -14,11 +14,7 @@ export default function Home() {
         </div>
       </section>
       <section className="container mx-auto">
-        <div className="px-4 pt-8">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
+        <div className="px-4 pt-8"></div>
         <h1
           id="realisations"
           className="px-4 pt-24 text-xl font-medium tracking-tight"

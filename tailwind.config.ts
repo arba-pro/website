@@ -14,7 +14,7 @@ const config: Config = {
       },
       colors: {},
       backgroundImage: {
-        "hero-image": "url('/website/londe/londe-6.jpg')",
+        "hero-image": "url('/website/images/realisations/l-onde/l-onde-6.jpg')",
       },
     },
   },
