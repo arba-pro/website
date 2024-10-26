@@ -14,7 +14,6 @@ export default function WebNavigation({ navItems }: { navItems: NavItem[] }) {
   const [hash, setHash] = useState("");
 
   useEffect(() => {
-    console.log("updateHash");
     const currentHash = window.location.hash.replace("#", "");
     const isHomePage = pathname == "/website";
     if (isHomePage && !currentHash) {
@@ -22,7 +21,7 @@ export default function WebNavigation({ navItems }: { navItems: NavItem[] }) {
     } else if (currentHash) {
       setHash(currentHash);
     }
-  }, [searchParams, pathname]);
+  }, [pathname, searchParams]);
 
   return (
     <ul className="flex gap-4 pt-2">
@@ -33,7 +32,7 @@ export default function WebNavigation({ navItems }: { navItems: NavItem[] }) {
           .replace(/\p{Diacritic}/gu, "");
 
         const isActive =
-          pathname === item.href ||
+          pathname === `${item.href}/` ||
           (pathname !== "/" && pathname.startsWith(`/${normalizedLabel}`)) ||
           (pathname === "/" && normalizedLabel === hash) ||
           (pathname === "/" && !hash && normalizedLabel === "accueil");
