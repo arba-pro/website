@@ -1,6 +1,6 @@
 import Realisations from "@/components/realisations";
 
-export default function Home() {
+export default async function Home() {
   return (
     <>
       <section className="bg-hero-image bg-cover bg-center h-[90dvh]">

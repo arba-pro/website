@@ -1,24 +1,25 @@
 import Link from "next/link";
-import Image from "next/image";
+
+import ImageFade from "@/components/image-fade";
+
 import { getRealisations } from "@/lib/mdx";
 
-const realisations = getRealisations();
-
-export default function Realisations() {
+export default async function Realisations() {
+  const realisations = await getRealisations();
   return (
-    <ul className="py-24 px-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+    <ul className="py-24 px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {realisations.map((realisation) => (
         <li key={realisation.slug} className="flex flex-col h-full">
           <Link
             href={`/realisations/${realisation.slug}`}
             className="flex flex-col h-full"
           >
-            <div className="relative w-full h-96 ">
-              <Image
+            <div className="flex-grow relative">
+              <ImageFade
                 src={realisation.cover_image.src}
                 alt={realisation.cover_image.alt}
-                fill
-                className="object-contain object-left"
+                width={realisation.cover_image.width}
+                height={realisation.cover_image.height}
               />
             </div>
             <span className="mt-2">{realisation.title}</span>
