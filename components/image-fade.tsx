@@ -10,31 +10,21 @@ interface ImageProps {
   alt: string;
   width: number;
   height: number;
-  // maxHeight: number;
 }
 
-export default function ImageFade({
-  src,
-  alt,
-  width,
-  height,
-}: // maxHeight,
-ImageProps) {
+export default function ImageFade({ src, alt, width, height }: ImageProps) {
   console.log(src);
   const [isImageLoading, setImageLoading] = useState(true);
 
   return (
-    <div
-      className="relative bg-gray-100 w-full h-full"
-      // style={{ height: maxHeight ? `${maxHeight}px` : "auto" }}
-    >
+    <div className="relative bg-gray-100 w-full h-full">
       <Image
         src={src}
         alt={alt}
         width={width}
         height={height}
         className={cn(
-          "object-cover h-full",
+          "object-cover h-full w-full",
           "transition-opacity duration-300",
           isImageLoading && "opacity-0"
         )}

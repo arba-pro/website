@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { notFound } from "next/navigation";
 
 import Realisation from "@/types/realisation";
@@ -7,6 +6,7 @@ import { getRealisations } from "@/lib/mdx";
 import { formatDate } from "@/lib/utils";
 
 import { CustomMDX } from "@/components/mdx-remote";
+import ImageFade from "@/components/image-fade";
 
 type Params = Promise<{ slug: string }>;
 
@@ -30,22 +30,24 @@ export default async function RealisationPage({ params }: { params: Params }) {
 
   return (
     <>
-      <section className="container mx-auto px-4 pt-24">
+      <section className="container mx-auto px-4 pt-16 lg:pt-24">
         <h1 className="text-xl font-medium tracking-tight">
           {realisation.title}
         </h1>
       </section>
-      <section className="container mx-auto px-4 pt-12">
-        <div className="flex gap-8">
-          <div className="w-1/3">
-            <Image
-              src={realisation.cover_image.src}
-              alt={realisation.cover_image.alt}
-              width={realisation.cover_image.width}
-              height={realisation.cover_image.height}
-            />
+      <section className="container mx-auto px-4 pt-4 lg:pt-12 pb-24">
+        <div className="lg:flex lg:gap-8">
+          <div className="w-full lg:w-1/3">
+            <div>
+              <ImageFade
+                src={realisation.cover_image.src}
+                alt={realisation.cover_image.alt}
+                width={realisation.cover_image.width}
+                height={realisation.cover_image.height}
+              />
+            </div>
             <section className="">
-              <ul className="pt-8 flex flex-wrap gap-x-8 gap-y-3">
+              <ul className="pt-4 lg:pt-8 flex flex-wrap gap-x-8 gap-y-3">
                 {Object.entries(realisation.plot).map(([key, value]) => (
                   <li
                     key={key}
@@ -58,7 +60,7 @@ export default async function RealisationPage({ params }: { params: Params }) {
                   </li>
                 ))}
               </ul>
-              <ul className="pt-4 mt-4 border-t border-gray-200 flex flex-wrap gap-x-8 gap-y-3">
+              <ul className="pb-8 pt-4 mt-4 border-t border-gray-200 flex flex-wrap gap-x-8 gap-y-3">
                 {Object.entries(realisation.construction).map(
                   ([key, value]) => (
                     <li
@@ -75,7 +77,7 @@ export default async function RealisationPage({ params }: { params: Params }) {
               </ul>
             </section>
           </div>
-          <div className="w-2/3">
+          <div className="w-fulllg:w-2/3">
             {realisation.content && <CustomMDX source={realisation.content} />}
             <p className="pt-4">
               {formatDate(new Date(realisation.time.updated))}
