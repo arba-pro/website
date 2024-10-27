@@ -37,7 +37,6 @@ export default function WebNavigation({ navItems }: { navItems: NavItem[] }) {
           (pathname === "/" && normalizedLabel === hash) ||
           (pathname === "/" && !hash && normalizedLabel === "accueil");
 
-        console.log(pathname, item.href, isActive);
         return (
           <li
             key={item.href}

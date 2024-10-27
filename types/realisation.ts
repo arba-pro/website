@@ -14,6 +14,7 @@ export default interface Realisation {
     caption?: string;
   };
   plot: {
+    année?: number;
     site: string;
     surface: string;
     budget?: string;
@@ -24,4 +25,5 @@ export default interface Realisation {
     chauffage: string;
     agencement: string;
   };
+  awards?: string[];
 }
