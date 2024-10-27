@@ -28,6 +28,56 @@ export default async function RealisationPage({ params }: { params: Params }) {
     return notFound();
   }
 
+  function renderPlot() {
+    if (
+      !realisation ||
+      !realisation.plot ||
+      Object.keys(realisation.plot).length === 0
+    ) {
+      return null;
+    }
+    return (
+      <ul className="pt-4 lg:pt-8 flex flex-wrap gap-x-8 gap-y-3">
+        {Object.entries(realisation.plot).map(([key, value]) => (
+          <li
+            key={key}
+            className="flex-basis-[calc(50%-1rem)] flex-grow-0 min-w-[calc(50%-1rem)]"
+          >
+            <h4 className="text-xs font-medium text-gray-400 font-mono">
+              {key}
+            </h4>
+            <h3 className="text-sm font-medium">{value}</h3>
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
+  function renderConstruction() {
+    if (
+      !realisation ||
+      !realisation.construction ||
+      Object.keys(realisation.construction).length === 0
+    ) {
+      return null;
+    }
+    return (
+      <ul className="pb-8 pt-4 mt-4 border-t border-gray-200 flex flex-wrap gap-x-8 gap-y-3">
+        {Object.entries(realisation.construction).map(([key, value]) => (
+          <li
+            key={key}
+            className="flex-basis-[calc(50%-1rem)] flex-grow-0 min-w-[calc(50%-1rem)]"
+          >
+            <h4 className="text-xs font-medium text-gray-400 font-mono">
+              {key}
+            </h4>
+            <h3 className="text-sm font-medium">{value}</h3>
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   return (
     <>
       <section className="container mx-auto px-4 pt-16 lg:pt-24">
@@ -47,34 +97,8 @@ export default async function RealisationPage({ params }: { params: Params }) {
               />
             </div>
             <section className="">
-              <ul className="pt-4 lg:pt-8 flex flex-wrap gap-x-8 gap-y-3">
-                {Object.entries(realisation.plot).map(([key, value]) => (
-                  <li
-                    key={key}
-                    className="flex-basis-[calc(50%-1rem)] flex-grow-0 min-w-[calc(50%-1rem)]"
-                  >
-                    <h4 className="text-xs font-medium text-gray-400 font-mono">
-                      {key}
-                    </h4>
-                    <h3 className="text-sm font-medium">{value}</h3>
-                  </li>
-                ))}
-              </ul>
-              <ul className="pb-8 pt-4 mt-4 border-t border-gray-200 flex flex-wrap gap-x-8 gap-y-3">
-                {Object.entries(realisation.construction).map(
-                  ([key, value]) => (
-                    <li
-                      key={key}
-                      className="flex-basis-[calc(50%-1rem)] flex-grow-0 min-w-[calc(50%-1rem)]"
-                    >
-                      <h4 className="text-xs font-medium text-gray-400 font-mono">
-                        {key}
-                      </h4>
-                      <h3 className="text-sm font-medium">{value}</h3>
-                    </li>
-                  )
-                )}
-              </ul>
+              {renderPlot()}
+              {renderConstruction()}
             </section>
           </div>
           <div className="w-fulllg:w-2/3">
