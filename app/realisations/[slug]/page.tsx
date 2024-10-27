@@ -101,7 +101,7 @@ export default async function RealisationPage({ params }: { params: Params }) {
               {renderConstruction()}
             </section>
           </div>
-          <div className="w-fulllg:w-2/3">
+          <div className="w-full lg:w-2/3">
             {realisation.content && <CustomMDX source={realisation.content} />}
             <p className="pt-4">
               {formatDate(new Date(realisation.time.updated))}
