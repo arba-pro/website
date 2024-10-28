@@ -37,7 +37,7 @@ export default async function RealisationPage({ params }: { params: Params }) {
       return null;
     }
     return (
-      <ul className="pt-4 lg:pt-8 flex flex-wrap gap-x-8 gap-y-3">
+      <ul className="flex flex-wrap gap-x-8 gap-y-3">
         {Object.entries(realisation.plot).map(([key, value]) => (
           <li
             key={key}
@@ -62,7 +62,7 @@ export default async function RealisationPage({ params }: { params: Params }) {
       return null;
     }
     return (
-      <ul className="pb-8 pt-4 mt-4 border-t border-gray-200 flex flex-wrap gap-x-8 gap-y-3">
+      <ul className="flex flex-wrap gap-x-8 gap-y-3">
         {Object.entries(realisation.construction).map(([key, value]) => (
           <li
             key={key}
@@ -78,6 +78,28 @@ export default async function RealisationPage({ params }: { params: Params }) {
     );
   }
 
+  function renderAwards() {
+    if (
+      !realisation ||
+      !realisation.awards ||
+      realisation.awards.length === 0
+    ) {
+      return null;
+    }
+    return (
+      <div className="">
+        <h4 className="text-xs font-medium text-gray-400 font-mono">prix</h4>
+        <ul>
+          {realisation.awards.map((award) => (
+            <li key={award}>
+              <h3 className="text-sm font-medium">{award}</h3>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+
   return (
     <>
       <section className="container mx-auto px-4 pt-16 lg:pt-24">
@@ -87,7 +109,7 @@ export default async function RealisationPage({ params }: { params: Params }) {
       </section>
       <section className="container mx-auto px-4 pt-4 lg:pt-12 pb-24">
         <div className="lg:flex lg:gap-8">
-          <div className="w-full lg:w-1/3">
+          <div className="w-full lg:w-1/2 xl:w-1/3">
             <div>
               <ImageFade
                 src={realisation.cover_image.src}
@@ -96,12 +118,13 @@ export default async function RealisationPage({ params }: { params: Params }) {
                 height={realisation.cover_image.height}
               />
             </div>
-            <section className="">
+            <section className="flex flex-col divide-y divide-gray-200 [&>*]:py-4 pb-8">
+              {renderAwards()}
               {renderPlot()}
               {renderConstruction()}
             </section>
           </div>
-          <div className="w-full lg:w-2/3">
+          <div className="w-full lg:w-1/2 xl:w-2/3">
             {realisation.content && <CustomMDX source={realisation.content} />}
             <p className="pt-4">
               {formatDate(new Date(realisation.time.updated))}

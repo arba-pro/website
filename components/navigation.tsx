@@ -2,14 +2,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 
 import ArbaLogo from "@/components/arba-logo";
-import WebNavigation from "@/components/web-navigation";
-
-const navItems = [
-  { label: "Accueil", href: "/#accueil" },
-  { label: "Réalisations", href: "/#realisations" },
-  { label: "Équipe", href: "/equipe" },
-  { label: "Contact", href: "/contact" },
-];
+import ResponsiveNavigation from "@/components/responsive-navigation";
 
 export default function Navigation() {
   return (
@@ -19,7 +12,7 @@ export default function Navigation() {
           <ArbaLogo className="fill-black w-20 h-auto" />
         </Link>
         <Suspense>
-          <WebNavigation navItems={navItems} />
+          <ResponsiveNavigation />
         </Suspense>
       </section>
     </div>

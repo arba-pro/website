@@ -10,10 +10,16 @@ interface ImageProps {
   alt: string;
   width: number;
   height: number;
+  priority?: boolean;
 }
 
-export default function ImageFade({ src, alt, width, height }: ImageProps) {
-  console.log(src);
+export default function ImageFade({
+  src,
+  alt,
+  width,
+  height,
+  priority,
+}: ImageProps) {
   const [isImageLoading, setImageLoading] = useState(true);
 
   return (
@@ -23,6 +29,7 @@ export default function ImageFade({ src, alt, width, height }: ImageProps) {
         alt={alt}
         width={width}
         height={height}
+        priority={priority}
         className={cn(
           "object-cover h-full w-full",
           "transition-opacity duration-300",

@@ -1,41 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
-import { usePathname, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
-import NavItem from "@/types/nav-item";
-
-export default function WebNavigation({ navItems }: { navItems: NavItem[] }) {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const [hash, setHash] = useState("");
-
-  useEffect(() => {
-    const currentHash = window.location.hash.replace("#", "");
-    const isHomePage = pathname == "/website";
-    if (isHomePage && !currentHash) {
-      setHash("accueil");
-    } else if (currentHash) {
-      setHash(currentHash);
-    }
-  }, [pathname, searchParams]);
+import { useActiveNavigation } from "@/hooks/useActiveNavigation";
+export default function WebNavigation() {
+  const { activeItem, navItems } = useActiveNavigation();
 
   return (
     <ul className="flex gap-4 pt-2">
       {navItems.map((item) => {
-        const normalizedLabel = item.label
-          .toLowerCase()
-          .normalize("NFD")
-          .replace(/\p{Diacritic}/gu, "");
-
-        const isActive =
-          pathname === `${item.href}/` ||
-          (pathname !== "/" && pathname.startsWith(`/${normalizedLabel}`)) ||
-          (pathname === "/" && normalizedLabel === hash) ||
-          (pathname === "/" && !hash && normalizedLabel === "accueil");
+        const isActive = item === activeItem;
 
         return (
           <li
