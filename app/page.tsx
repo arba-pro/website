@@ -26,8 +26,8 @@ export default async function Home() {
         <div className="bg-gray-500">
           <div className="container mx-auto px-4 py-1.5">
             <p className="text-white font-mono text-sm lg:text-base">
-              <span className="font-bold">L’Onde</span> – Prix du Jury Archinovo
-              2022
+              <span className="font-bold">L’Onde à Murat</span> – Grand Prix du
+              Jury
             </p>
           </div>
         </div>
