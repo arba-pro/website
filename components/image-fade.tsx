@@ -26,13 +26,34 @@ export default function ImageFade({
 }: ImageProps) {
   const [isImageLoading, setImageLoading] = useState(true);
 
+  if (plan) {
+    return (
+      <div
+        className={cn(
+          "relative bg-gray-100 w-full h-full",
+          "border border-gray-100 bg-white p-4"
+        )}
+      >
+        <Image
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          priority={priority}
+          title={title}
+          className={cn(
+            "object-contain h-full w-full",
+            "transition-opacity duration-300",
+            isImageLoading && "opacity-0"
+          )}
+          onLoad={() => setImageLoading(false)}
+        />
+      </div>
+    );
+  }
+
   return (
-    <div
-      className={cn(
-        "relative bg-gray-100 w-full h-full",
-        plan && "p-4 border border-gray-200 bg-white"
-      )}
-    >
+    <div className="relative bg-gray-100 w-full h-full">
       <Image
         src={src}
         alt={alt}
