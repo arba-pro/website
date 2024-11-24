@@ -26,4 +26,11 @@ export default interface Realisation {
     agencement: string;
   };
   awards?: string[];
+  photos?: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+    caption?: string;
+  }[];
 }
