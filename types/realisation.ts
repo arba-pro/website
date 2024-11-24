@@ -1,4 +1,5 @@
 export default interface Realisation {
+  order: number;
   title: string;
   slug: string;
   content: string;
@@ -32,5 +33,6 @@ export default interface Realisation {
     width: number;
     height: number;
     caption?: string;
+    plan?: boolean;
   }[];
 }

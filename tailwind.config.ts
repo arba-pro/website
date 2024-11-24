@@ -17,7 +17,7 @@ const config: Config = {
       },
       colors: {},
       backgroundImage: {
-        "hero-image": "url('/website/images/realisations/l-onde/l-onde-6.jpg')",
+        "hero-image": "url('/website/images/realisations/l-onde/l-onde1.jpg')",
       },
       borderRadius: {
         lg: "var(--radius)",

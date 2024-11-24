@@ -11,6 +11,8 @@ interface ImageProps {
   width: number;
   height: number;
   priority?: boolean;
+  title?: string;
+  plan?: boolean;
 }
 
 export default function ImageFade({
@@ -19,17 +21,25 @@ export default function ImageFade({
   width,
   height,
   priority,
+  title,
+  plan,
 }: ImageProps) {
   const [isImageLoading, setImageLoading] = useState(true);
 
   return (
-    <div className="relative bg-gray-100 w-full h-full">
+    <div
+      className={cn(
+        "relative bg-gray-100 w-full h-full",
+        plan && "p-4 border border-gray-200 bg-white"
+      )}
+    >
       <Image
         src={src}
         alt={alt}
         width={width}
         height={height}
         priority={priority}
+        title={title}
         className={cn(
           "object-cover h-full w-full",
           "transition-opacity duration-300",
