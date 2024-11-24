@@ -8,6 +8,7 @@ import { formatDate } from "@/lib/utils";
 import { CustomMDX } from "@/components/mdx-remote";
 import ImageFade from "@/components/image-fade";
 import PhotoGallery from "@/components/photo-gallery";
+import { Suspense } from "react";
 type Params = Promise<{ slug: string }>;
 
 const Realisations = getRealisations();
@@ -127,7 +128,9 @@ export default async function RealisationPage({ params }: { params: Params }) {
           <div className="w-full lg:w-1/2 xl:w-2/3">
             {realisation.content && <CustomMDX source={realisation.content} />}
             <section className="pt-4 lg:pt-8">
-              <PhotoGallery photos={realisation.photos} />
+              <Suspense fallback={<div>Loading...</div>}>
+                <PhotoGallery photos={realisation.photos} />
+              </Suspense>
             </section>
             <p className="pt-4">
               {formatDate(new Date(realisation.time.updated))}
