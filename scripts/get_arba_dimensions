@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Get the current folder name
+folder_name=$(basename "$(pwd)")
+
+# Loop through all jpg and png files (case insensitive)
+for img in *.jpg *.JPG *.png *.PNG; do
+    # Skip if no files found
+    [ -e "$img" ] || continue
+    
+    # Get dimensions using ImageMagick's identify
+    dimensions=$(identify -format "%w %h" "$img")
+    width=$(echo $dimensions | cut -d' ' -f1)
+    height=$(echo $dimensions | cut -d' ' -f2)
+    
+    # Print in MDX format
+    echo "  - src: \"/website/images/realisations/${folder_name}/${img}\""
+    echo "    alt: \"La Grange\""
+    echo "    width: ${width}"
+    echo "    height: ${height}"
+    echo "    caption: \"© arba-\""
+    echo ""
+done
