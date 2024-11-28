@@ -112,12 +112,7 @@ export default async function RealisationPage({ params }: { params: Params }) {
         <div className="lg:flex lg:gap-8">
           <div className="w-full lg:w-1/2 xl:w-1/3">
             <div>
-              <ImageFade
-                src={realisation.cover_image.src}
-                alt={realisation.cover_image.alt}
-                width={realisation.cover_image.width}
-                height={realisation.cover_image.height}
-              />
+              <ImageFade image={realisation.cover_image ?? null} />
             </div>
             <section className="flex flex-col divide-y divide-gray-200 [&>*]:py-4 pb-8">
               {renderAwards()}

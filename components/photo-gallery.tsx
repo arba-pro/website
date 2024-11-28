@@ -24,7 +24,7 @@ const LightBox = dynamic(() => import("@/components/light-box"), {
 });
 
 function renderNextImage(
-  { alt = "", title }: RenderImageProps,
+  { title }: RenderImageProps,
   { photo, width, height }: RenderImageContext<CustomPhoto>
 ) {
   return (
@@ -35,24 +35,19 @@ function renderNextImage(
         aspectRatio: `${width} / ${height}`,
       }}
     >
-      <ImageFade
-        src={photo.src}
-        alt={alt}
-        title={title}
-        width={width}
-        height={height}
-        plan={photo.plan}
-      />
+      <ImageFade image={photo ?? null} plan={photo.plan} title={title} />
     </div>
   );
 }
 
 export default function PhotoGallery({
   photos = [],
+  initialIndex = -1,
 }: {
   photos: Realisation["photos"];
+  initialIndex?: number;
 }) {
-  const [index, setIndex] = useState(-1);
+  const [index, setIndex] = useState(initialIndex);
 
   return (
     <>

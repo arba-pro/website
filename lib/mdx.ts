@@ -38,5 +38,9 @@ export function getRealisations(): Realisation[] {
     .map((file) =>
       readFile(path.join(process.cwd(), "content", "realisations", file))
     )
-    .filter((realisation): realisation is Realisation => realisation !== null);
+    .filter(
+      (realisation): realisation is Realisation =>
+        realisation !== null && !realisation.hidden
+    )
+    .sort((a, b) => (a.order ?? Infinity) - (b.order ?? Infinity));
 }

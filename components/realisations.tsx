@@ -15,12 +15,7 @@ export default async function Realisations() {
             className="flex flex-col h-full"
           >
             <div className="flex-grow relative">
-              <ImageFade
-                src={realisation.cover_image.src}
-                alt={realisation.cover_image.alt}
-                width={realisation.cover_image.width}
-                height={realisation.cover_image.height}
-              />
+              <ImageFade image={realisation.cover_image ?? null} />
             </div>
             <span className="mt-2">{realisation.title}</span>
           </Link>

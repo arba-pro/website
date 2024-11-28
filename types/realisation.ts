@@ -1,5 +1,6 @@
 export default interface Realisation {
   order: number;
+  hidden?: boolean;
   title: string;
   slug: string;
   content: string;
@@ -7,7 +8,7 @@ export default interface Realisation {
     created: string;
     updated: string;
   };
-  cover_image: {
+  cover_image?: {
     src: string;
     alt: string;
     width: number;

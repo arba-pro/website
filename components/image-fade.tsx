@@ -5,26 +5,32 @@ import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 
-interface ImageProps {
+interface ImageData {
   src: string;
-  alt: string;
+  alt?: string;
   width: number;
   height: number;
+  caption?: string;
+}
+
+interface ImageProps {
+  image: ImageData | null;
   priority?: boolean;
   title?: string;
   plan?: boolean;
 }
 
 export default function ImageFade({
-  src,
-  alt,
-  width,
-  height,
+  image,
   priority,
   title,
   plan,
 }: ImageProps) {
   const [isImageLoading, setImageLoading] = useState(true);
+
+  if (!image) {
+    return <div className="relative bg-gray-100 w-full h-full"></div>;
+  }
 
   if (plan) {
     return (
@@ -35,10 +41,10 @@ export default function ImageFade({
         )}
       >
         <Image
-          src={src}
-          alt={alt}
-          width={width}
-          height={height}
+          src={image.src}
+          alt={image.alt}
+          width={image.width}
+          height={image.height}
           priority={priority}
           title={title}
           className={cn(
@@ -55,10 +61,10 @@ export default function ImageFade({
   return (
     <div className="relative bg-gray-100 w-full h-full">
       <Image
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
+        src={image.src}
+        alt={image.alt}
+        width={image.width}
+        height={image.height}
         priority={priority}
         title={title}
         className={cn(
