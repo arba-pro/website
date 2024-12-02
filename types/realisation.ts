@@ -14,6 +14,7 @@ export default interface Realisation {
     width: number;
     height: number;
     caption?: string;
+    index?: number;
   };
   plot: {
     année?: number;

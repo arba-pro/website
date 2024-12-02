@@ -18,12 +18,16 @@ export default function LightBox({
   const isMobile = useMediaQuery("(max-width: 1023px)");
   const padding = isMobile ? "16px" : "64px";
 
+  const handleClose = () => {
+    setIndex(-1);
+  };
+
   return (
     <Lightbox
       slides={photos}
       open={index >= 0}
       index={index}
-      close={() => setIndex(-1)}
+      close={handleClose}
       carousel={{ padding }}
       styles={{
         container: {

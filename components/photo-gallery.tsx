@@ -12,7 +12,7 @@ import {
 import "react-photo-album/rows.css";
 
 import Realisation from "@/types/realisation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 
 interface CustomPhoto extends Photo {
@@ -48,6 +48,10 @@ export default function PhotoGallery({
   initialIndex?: number;
 }) {
   const [index, setIndex] = useState(initialIndex);
+
+  useEffect(() => {
+    setIndex(initialIndex);
+  }, [initialIndex]);
 
   return (
     <>
