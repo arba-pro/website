@@ -11,10 +11,12 @@ export default function Contact() {
           <div className="w-full lg:w-1/2 xl:w-1/3 pb-8">
             <div className="relative">
               <ImageFade
-                src="/website/carte.png"
-                alt="Carte – 135 Rue du Faubourg du Temple"
-                width={1819}
-                height={1671}
+                image={{
+                  src: "/website/carte.png",
+                  alt: "Carte – 135 Rue du Faubourg du Temple",
+                  width: 1819,
+                  height: 1671,
+                }}
                 priority={true}
               />
             </div>

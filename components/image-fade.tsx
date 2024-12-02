@@ -42,7 +42,7 @@ export default function ImageFade({
       >
         <Image
           src={image.src}
-          alt={image.alt}
+          alt={image.alt ?? ""}
           width={image.width}
           height={image.height}
           priority={priority}
@@ -62,7 +62,7 @@ export default function ImageFade({
     <div className="relative bg-gray-100 w-full h-full">
       <Image
         src={image.src}
-        alt={image.alt}
+        alt={image.alt ?? ""}
         width={image.width}
         height={image.height}
         priority={priority}

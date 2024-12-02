@@ -16,13 +16,13 @@ export default interface Realisation {
     caption?: string;
     index?: number;
   };
-  plot: {
+  plot?: {
     année?: number;
     site: string;
     surface: string;
     budget?: string;
   };
-  construction: {
+  construction?: {
     materiaux: string;
     isolation?: string;
     chauffage: string;

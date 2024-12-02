@@ -15,10 +15,13 @@ export default function EquipeLayout({
           <div className="w-full lg:w-1/2 xl:w-1/3 pb-8">
             <div className="relative">
               <ImageFade
-                src="/website/JB-et-Sihem.jpg"
-                alt="JB et Sihem"
-                width={460}
-                height={353}
+                image={{
+                  src: "/website/JB-et-Sihem.jpg",
+                  alt: "JB et Sihem",
+                  width: 460,
+                  height: 353,
+                }}
+                priority={true}
               />
             </div>
           </div>
