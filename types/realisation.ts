@@ -37,4 +37,5 @@ export default interface Realisation {
     caption?: string;
     plan?: boolean;
   }[];
+  copyright: string[];
 }

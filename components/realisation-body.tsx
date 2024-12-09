@@ -24,6 +24,7 @@ type Props = {
   data: React.ReactNode;
   content: React.ReactNode;
   updated: React.ReactNode;
+  copyright: React.ReactNode;
 };
 
 interface CustomPhoto extends Photo {
@@ -53,6 +54,7 @@ export default function RealisationBody({
   content,
   photos,
   updated,
+  copyright,
 }: Props) {
   const [index, setIndex] = useState(-1);
 
@@ -88,6 +90,7 @@ export default function RealisationBody({
           {content}
           {renderPhotos()}
           <LightBox index={index} photos={photos} setIndex={setIndex} />
+          {copyright}
           {updated}
         </div>
       </div>

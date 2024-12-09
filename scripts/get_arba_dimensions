@@ -15,7 +15,7 @@ for img in *.jpg *.JPG *.png *.PNG; do
     
     # Print in MDX format
     echo "  - src: \"/website/images/realisations/${folder_name}/${img}\""
-    echo "    alt: \"La Grange\""
+    echo "    alt: \"\""
     echo "    width: ${width}"
     echo "    height: ${height}"
     echo "    caption: \"© arba-\""
