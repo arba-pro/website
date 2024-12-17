@@ -36,8 +36,8 @@ export default function ImageFade({
     return (
       <div
         className={cn(
-          "relative bg-gray-100 w-full h-full",
-          "border border-gray-100 bg-white p-4"
+          "relative w-full h-full",
+          "border border-gray-200 bg-white p-4"
         )}
       >
         <Image
