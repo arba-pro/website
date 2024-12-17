@@ -5,6 +5,10 @@ import NavItem from "@/types/nav-item";
 const navItems: NavItem[] = [
   { label: "Accueil", href: "/#accueil" },
   { label: "Réalisations", href: "/#realisations" },
+  { label: "Design", href: "/design" },
+  { label: "Destinctions", href: "/distinctions" },
+  { label: "Presse", href: "/presse" },
+  { label: "Réflexions", href: "/reflexions" },
   { label: "Équipe", href: "/equipe" },
   { label: "Contact", href: "/contact" },
 ];

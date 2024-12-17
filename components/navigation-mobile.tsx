@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useState } from "react";
 
-export default function MobileNavigation() {
+export default function NavigationMobile() {
   const [open, setOpen] = useState(false);
   const { activeItem, navItems } = useActiveNavigation();
 

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { cn } from "@/lib/utils";
 import { useActiveNavigation } from "@/hooks/useActiveNavigation";
-export default function WebNavigation() {
+export default function NavigationWeb() {
   const { activeItem, navItems } = useActiveNavigation();
 
   return (
