@@ -7,13 +7,10 @@ import { useActiveNavigation } from "@/hooks/useActiveNavigation";
 import {
   NavigationMenu,
   NavigationMenuContent,
-  NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-  NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
 
 import NavItem from "@/types/nav-item";
