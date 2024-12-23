@@ -1,28 +1,10 @@
 "use client";
 
-import Link from "next/link";
-import { Suspense } from "react";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
+import NavigationMobile from "@/components/navigation-mobile";
+import NavigationWeb from "@/components/navigation-web";
 
-import ArbaLogo from "@/components/arba-logo";
-import NavigationResponsive from "@/components/navigation-responsive";
-import useScrolledOpacity from "@/hooks/useScrolledOpacity";
-
-export default function Navigation() {
-  const opacity = useScrolledOpacity();
-
-  return (
-    <div
-      className="fixed top-0 left-0 right-0 z-50 yarl__no_scroll_padding"
-      style={{ backgroundColor: `rgba(255, 255, 255, ${opacity})` }}
-    >
-      <section className="container mx-auto flex justify-between items-center p-4">
-        <Link href="/#accueil">
-          <ArbaLogo className="fill-black w-20 h-auto" />
-        </Link>
-        <Suspense>
-          <NavigationResponsive />
-        </Suspense>
-      </section>
-    </div>
-  );
+export default function NavigationResponsive() {
+  const isMobile = useMediaQuery("(max-width: 1024px)");
+  return <div>{isMobile ? <NavigationMobile /> : <NavigationWeb />}</div>;
 }
