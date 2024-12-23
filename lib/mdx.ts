@@ -56,3 +56,14 @@ export function getDesigns(): Design[] {
     .filter((design): design is Design => design !== null && !design.hidden)
     .sort((a, b) => (a.order ?? Infinity) - (b.order ?? Infinity));
 }
+
+export function getRealisation(slug: string): Realisation | null {
+  try {
+    return readFile<Realisation>(
+      path.join(process.cwd(), "content", "realisations", `${slug}.mdx`)
+    );
+  } catch (error) {
+    console.error(`Failed to get realisation with slug ${slug}:`, error);
+    return null;
+  }
+}

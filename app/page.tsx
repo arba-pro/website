@@ -15,7 +15,7 @@ export default async function Home() {
           </header>
           <div className="px-4 flex-grow flex items-end pb-4 lg:pb-12 justify-end">
             <Image
-              src="/website/archinovo-logo.png"
+              src="/website/images/distinctions/archinovo-logo.png"
               alt="Logo"
               width={709}
               height={709}
