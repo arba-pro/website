@@ -1,11 +1,11 @@
 import Realisation from "@/types/realisation";
-
+import Design from "@/types/design";
 import fs from "fs";
 import path from "path";
 
 import matter from "gray-matter";
 
-function readFile(filePath: string): Realisation | null {
+function readFile<T extends { slug: string }>(filePath: string): T | null {
   try {
     const rawContent = fs.readFileSync(filePath, "utf-8");
     const { data, content } = matter(rawContent);
@@ -16,7 +16,7 @@ function readFile(filePath: string): Realisation | null {
       ...data,
       slug,
       content,
-    } as Realisation;
+    } as unknown as T;
   } catch (error) {
     console.error(`Failed to read or parse the file at ${filePath}:`, error);
     return null;
@@ -36,11 +36,23 @@ export function getRealisations(): Realisation[] {
   const files = getFiles(path.join(process.cwd(), "content", "realisations"));
   return files
     .map((file) =>
-      readFile(path.join(process.cwd(), "content", "realisations", file))
+      readFile<Realisation>(
+        path.join(process.cwd(), "content", "realisations", file)
+      )
     )
     .filter(
       (realisation): realisation is Realisation =>
         realisation !== null && !realisation.hidden
     )
+    .sort((a, b) => (a.order ?? Infinity) - (b.order ?? Infinity));
+}
+
+export function getDesigns(): Design[] {
+  const files = getFiles(path.join(process.cwd(), "content", "design"));
+  return files
+    .map((file) =>
+      readFile<Design>(path.join(process.cwd(), "content", "design", file))
+    )
+    .filter((design): design is Design => design !== null && !design.hidden)
     .sort((a, b) => (a.order ?? Infinity) - (b.order ?? Infinity));
 }

@@ -1,36 +1,31 @@
 import { notFound } from "next/navigation";
 
-import Realisation from "@/types/realisation";
+import Design from "@/types/design";
 
-import { getRealisations } from "@/lib/mdx";
+import { getDesigns } from "@/lib/mdx";
 
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-
 import DetailBody from "@/components/detail-body";
 import DetailContent from "@/components/detail-content";
 import DetailUpdated from "@/components/detail-updated";
 import DetailCopyright from "@/components/detail-copyright";
 
-import RealisationData from "@/components/realisation-data";
-
 type Params = Promise<{ slug: string }>;
 
-const Realisations = getRealisations();
+const Designs = getDesigns();
 
 export const generateStaticParams = async () => {
-  return Realisations.map((realisation) => ({
-    slug: `${realisation.slug}`,
+  return Designs.map((design) => ({
+    slug: `${design.slug}`,
   }));
 };
 
-export default async function RealisationPage({ params }: { params: Params }) {
+export default async function DesignPage({ params }: { params: Params }) {
   const { slug } = await params;
-  const realisation = Realisations.find(
-    (realisation: Realisation) => realisation.slug === slug
-  );
+  const design = Designs.find((design: Design) => design.slug === slug);
 
-  if (!realisation) {
+  if (!design) {
     return notFound();
   }
 
@@ -46,21 +41,20 @@ export default async function RealisationPage({ params }: { params: Params }) {
               "after:scale-x-0 after:opacity-0 after:transition after:duration-300 after:origin-left",
               "after:hover:scale-x-100 after:hover:opacity-100"
             )}
-            href="/#realisations"
+            href="/design"
           >
-            Réalisations
+            Design
           </Link>
           <span> / </span>
-          {realisation.title}
+          {design.title}
         </h1>
       </section>
       <DetailBody
-        coverImage={realisation.cover_image}
-        photos={realisation.photos}
-        data={<RealisationData realisation={realisation} />}
-        content={<DetailContent content={realisation.content} />}
-        updated={<DetailUpdated date={realisation.time.updated} />}
-        copyright={<DetailCopyright copyright={realisation.copyright} />}
+        coverImage={design.cover_image}
+        photos={design.photos}
+        content={<DetailContent content={design.content} />}
+        updated={<DetailUpdated date={design.time.updated} />}
+        copyright={<DetailCopyright copyright={design.copyright} />}
       />
     </>
   );

@@ -1,6 +1,7 @@
 import CoverImage from "@/types/cover_image";
 import PhotoImage from "@/types/photo_image";
-export default interface Realisation {
+
+export default interface Design {
   order: number;
   hidden?: boolean;
   title: string;
@@ -11,19 +12,6 @@ export default interface Realisation {
     updated: string;
   };
   cover_image?: CoverImage;
-  plot?: {
-    année?: number;
-    site: string;
-    surface: string;
-    budget?: string;
-  };
-  construction?: {
-    materiaux: string;
-    isolation?: string;
-    chauffage: string;
-    agencement: string;
-  };
-  awards?: string[];
   photos?: PhotoImage[];
   copyright: string[];
 }
