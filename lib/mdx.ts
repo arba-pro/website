@@ -67,3 +67,11 @@ export function getRealisation(slug: string): Realisation | null {
     return null;
   }
 }
+
+export async function getRealisationOrThrow(
+  slug: string
+): Promise<Realisation> {
+  const realisation = await getRealisation(slug);
+  if (!realisation) throw new Error(`Realisation not found: ${slug}`);
+  return realisation;
+}

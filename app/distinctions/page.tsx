@@ -1,7 +1,7 @@
 import ImageFade from "@/components/image-fade";
 import Image from "next/image";
 
-import { getRealisation } from "@/lib/mdx";
+import { getRealisationOrThrow } from "@/lib/mdx";
 import Realisation from "@/types/realisation";
 import CoverImage from "@/types/cover_image";
 
@@ -16,14 +16,6 @@ type Distinction = {
   award: Award;
   realisation: Realisation;
 };
-
-export async function getRealisationOrThrow(
-  slug: string
-): Promise<Realisation> {
-  const realisation = await getRealisation(slug);
-  if (!realisation) throw new Error(`Realisation not found: ${slug}`);
-  return realisation;
-}
 
 export default async function Distinctions() {
   const entreLesMurs = await getRealisationOrThrow("entre-les-murs");
