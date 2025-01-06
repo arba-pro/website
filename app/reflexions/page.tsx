@@ -7,6 +7,7 @@ export default function Reflexions() {
       title:
         "Petites leçons de la Serpentine (où il n'y a pas que les oiseaux)",
       author: "Sihem Lamine",
+      date: "Juin 2012",
       file: "/website/images/reflexions/01_petite_lecon_de_la_serpentine.pdf",
     },
     {
