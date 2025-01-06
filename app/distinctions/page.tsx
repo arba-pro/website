@@ -32,12 +32,28 @@ export default async function Distinctions() {
   const maisonTraversee = await getRealisationOrThrow("maison-traversee");
   const maisonDansUnChamp = await getRealisationOrThrow("maison-dans-un-champ");
   const londeMurat = await getRealisationOrThrow("l-onde");
+  const kiosque = await getRealisationOrThrow("le-kiosque");
+  const maisonDevantLaDune = await getRealisationOrThrow(
+    "maison-devant-la-dune"
+  );
+  const maisonSurLeMur = await getRealisationOrThrow("maison-sur-le-mur");
+  const petiteMaison = await getRealisationOrThrow("petite-maison");
 
   const prixNationalDeLaConstruction = {
     title: "Prix National de la Construction",
     cover_image: {
       src: "/website/images/distinctions/prix-national-de-la-construction.png",
       alt: "Prix National de la Construction",
+      width: 360,
+      height: 360,
+    },
+  };
+
+  const prixRegionaleDeLaConstruction = {
+    title: "Prix Régional de la Construction",
+    cover_image: {
+      src: "/website/images/distinctions/prix-national-de-la-construction.png",
+      alt: "Prix Régional de la Construction",
       width: 360,
       height: 360,
     },
@@ -103,11 +119,94 @@ export default async function Distinctions() {
     },
   };
 
+  const prixDArchitectures = {
+    title: "Prix d'a 10+1",
+    cover_image: {
+      src: "/website/images/distinctions/prix-d-architectures.png",
+      alt: "Prix d'a 10+1",
+      width: 650,
+      height: 650,
+    },
+  };
+
+  const caue = {
+    title:
+      "Le Conseil d'architecture, d'urbanisme et de l'environnement du Val-de-Marne",
+    cover_image: {
+      src: "/website/images/distinctions/caue.png",
+      alt: "Le Conseil d'architecture, d'urbanisme et de l'environnement du Val-de-Marne",
+      width: 480,
+      height: 480,
+    },
+  };
+
+  const dwell = {
+    title: "Dwell",
+    cover_image: {
+      src: "/website/images/distinctions/dwell.png",
+      alt: "Dwell",
+      width: 480,
+      height: 480,
+    },
+  };
+
+  const maisonsPaysannesFrance = {
+    title: "Maisons Paysannes de France",
+    cover_image: {
+      src: "/website/images/distinctions/maisons-paysannes-de-france.png",
+      alt: "Maisons Paysannes de France",
+      width: 480,
+      height: 480,
+    },
+  };
+
   const distinctions: Distinction[] = [
+    {
+      year: 2024,
+      title: "Nominé",
+      award: prixDArchitectures,
+      realisation: kiosque,
+    },
     {
       year: 2023,
       title: "Grand Prix du Jury",
       award: prixArchinovo,
+      realisation: londeMurat,
+    },
+    {
+      year: 2023,
+      title: "Lauréat",
+      award: prixNationalDeLaConstruction,
+      realisation: maisonDevantLaDune,
+    },
+    {
+      year: 2023,
+      title: "Palmarès",
+      award: caue,
+      realisation: maisonSurLeMur,
+    },
+    {
+      year: 2022,
+      title: "Prix des Etudiants",
+      award: prixRegionaleDeLaConstruction,
+      realisation: maisonSurLeMur,
+    },
+    {
+      year: 2021,
+      title: "Design Awards",
+      award: dwell,
+      realisation: petiteMaison,
+    },
+    {
+      year: 2020,
+      title: "Prix",
+      award: maisonsPaysannesFrance,
+      realisation: entreLesMurs,
+    },
+    {
+      year: 2019,
+      title: "Mention Ruralité",
+      award: prixNationalDeLaConstruction,
       realisation: londeMurat,
     },
     {
@@ -213,12 +312,12 @@ export default async function Distinctions() {
                 height={distinction.award.cover_image?.height ?? 0}
                 className="w-20 h-20"
               />
-              <div className="w-full">
+              <div className="w-full min-w-0">
                 <p className="font-bold leading-tight">
                   {distinction.title}
                   <span className="font-normal">, {distinction.year}</span>
                 </p>
-                <p className="text-sm">{distinction.award.title}</p>
+                <p className="text-sm truncate">{distinction.award.title}</p>
                 <p className="border-t border-gray-200 mt-1 pt-1">
                   {distinction.realisation.title}
                 </p>
