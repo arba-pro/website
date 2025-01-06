@@ -2,13 +2,22 @@ import Realisations from "@/components/realisations";
 
 import Image from "next/image";
 
+import { cn } from "@/lib/utils";
+
 export default async function Home() {
   return (
     <>
-      <section className="bg-hero-image bg-cover bg-center h-[60svh] lg:h-[95vh] flex flex-col">
-        <div className="container mx-auto flex flex-col flex-grow">
+      <section className="relative h-[60svh] lg:h-[95vh] flex flex-col overflow-hidden">
+        <div
+          className={cn(
+            "absolute inset-0",
+            "before:content-[''] before:absolute before:inset-0 before:-z-10 before:w-full before:h-full before:max-w-[1680px] before:mx-auto",
+            "before:bg-hero-image before:bg-cover before:bg-[position:50%_60%]"
+          )}
+        ></div>
+        <div className="container mx-auto flex flex-col flex-grow ">
           <header className="p-4 pt-16 lg:pt-24">
-            <h1 className="text-xl font-medium tracking-tight text-balance">
+            <h1 className="text-xl font-medium tracking-tight text-balance leading-tight">
               Jean-Baptiste Barache & Sihem Lamine
             </h1>
             <h2 className="text-lg font-normal tracking-tight">Architectes</h2>
