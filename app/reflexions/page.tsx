@@ -4,6 +4,12 @@ import { cn } from "@/lib/utils";
 export default function Reflexions() {
   const reflexions = [
     {
+      title:
+        "Petites leçons de la Serpentine (où il n'y a pas que les oiseaux)",
+      author: "Sihem Lamine",
+      file: "/website/images/reflexions/01_petite_lecon_de_la_serpentine.pdf",
+    },
+    {
       title: "La ville tunisienne - symptôme d’un malaise identitaire ?",
       author: "Sihem Lamine",
       date: "Septembre 2012",
@@ -67,7 +73,8 @@ export default function Reflexions() {
                     {reflexion.title}
                   </a>
                   <p className="text-gray-500 mt-2">
-                    {reflexion.author}, {reflexion.date}
+                    {reflexion.author}
+                    {reflexion.date && `, ${reflexion.date}`}
                   </p>
                 </li>
               ))}
