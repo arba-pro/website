@@ -8,31 +8,31 @@ export default function Reflexions() {
         "Petites leçons de la Serpentine (où il n'y a pas que les oiseaux)",
       author: "Sihem Lamine",
       date: "Juin 2012",
-      file: "/website/images/reflexions/01_petite_lecon_de_la_serpentine.pdf",
+      file: "/images/reflexions/01_petite_lecon_de_la_serpentine.pdf",
     },
     {
       title: "La ville tunisienne - symptôme d’un malaise identitaire ?",
       author: "Sihem Lamine",
       date: "Septembre 2012",
-      file: "/website/images/reflexions/02_la_ville_tunisienne.pdf",
+      file: "/images/reflexions/02_la_ville_tunisienne.pdf",
     },
     {
       title: "Les amis de la 'High Line'",
       author: "Sihem Lamine",
       date: "Novembre 2012",
-      file: "/website/images/reflexions/03_les_amis_de_la_high_line.pdf",
+      file: "/images/reflexions/03_les_amis_de_la_high_line.pdf",
     },
     {
       title: "Sidi Yeti",
       author: "Sihem Lamine",
       date: "Janvier 2013",
-      file: "/website/images/reflexions/04_sidi_yeti.pdf",
+      file: "/images/reflexions/04_sidi_yeti.pdf",
     },
     {
       title: "Maman",
       author: "Sihem Lamine",
       date: "Septembre 2015",
-      file: "/website/images/reflexions/05_maman.pdf",
+      file: "/images/reflexions/05_maman.pdf",
     },
   ];
 
@@ -47,7 +47,7 @@ export default function Reflexions() {
             <div className="relative">
               <ImageFade
                 image={{
-                  src: "/website/images/reflexions/01.jpg",
+                  src: "/images/reflexions/01.jpg",
                   alt: "Reflexions",
                   width: 460,
                   height: 353,

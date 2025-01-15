@@ -14,7 +14,7 @@ for img in *.jpg *.JPG *.png *.PNG; do
     height=$(echo $dimensions | cut -d' ' -f2)
     
     # Print in MDX format
-    echo "  - src: \"/website/images/realisations/${folder_name}/${img}\""
+    echo "  - src: \"/images/realisations/${folder_name}/${img}\""
     echo "    alt: \"\""
     echo "    width: ${width}"
     echo "    height: ${height}"

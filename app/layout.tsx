@@ -16,6 +16,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://arba.pro"),
   title: "Arba",
   description: "Jean-Baptiste Barache & Sihem Lamine / Architectes",
 };

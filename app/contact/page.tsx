@@ -12,7 +12,7 @@ export default function Contact() {
             <div className="relative">
               <ImageFade
                 image={{
-                  src: "/website/carte.png",
+                  src: "/images/carte.png",
                   alt: "Carte – 135 Rue du Faubourg du Temple",
                   width: 1819,
                   height: 1671,

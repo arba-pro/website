@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   images: { unoptimized: true },
   output: "export",
-  basePath: "/website",
+  // basePath: "/website",
   trailingSlash: true,
 };
 

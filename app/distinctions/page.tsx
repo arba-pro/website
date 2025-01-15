@@ -42,7 +42,7 @@ export default async function Distinctions() {
   const prixNationalDeLaConstruction = {
     title: "Prix National de la Construction",
     cover_image: {
-      src: "/website/images/distinctions/prix-national-de-la-construction.png",
+      src: "/images/distinctions/prix-national-de-la-construction.png",
       alt: "Prix National de la Construction",
       width: 360,
       height: 360,
@@ -52,7 +52,7 @@ export default async function Distinctions() {
   const prixRegionaleDeLaConstruction = {
     title: "Prix Régional de la Construction",
     cover_image: {
-      src: "/website/images/distinctions/prix-national-de-la-construction.png",
+      src: "/images/distinctions/prix-national-de-la-construction.png",
       alt: "Prix Régional de la Construction",
       width: 360,
       height: 360,
@@ -62,7 +62,7 @@ export default async function Distinctions() {
   const prixArchinovo = {
     title: "Prix Archinovo",
     cover_image: {
-      src: "/website/images/distinctions/archinovo-logo.png",
+      src: "/images/distinctions/archinovo-logo.png",
       alt: "Prix National de la Construction",
       width: 709,
       height: 709,
@@ -72,7 +72,7 @@ export default async function Distinctions() {
   const tropheesBois = {
     title: "Trophées Bois Île-de-France",
     cover_image: {
-      src: "/website/images/distinctions/trophees-bois.png",
+      src: "/images/distinctions/trophees-bois.png",
       alt: "Trophées Bois Île-de-France",
       width: 800,
       height: 800,
@@ -82,7 +82,7 @@ export default async function Distinctions() {
   const archiContemporaine = {
     title: "Archi Contemporaine",
     cover_image: {
-      src: "/website/images/distinctions/archi-contemporaine.png",
+      src: "/images/distinctions/archi-contemporaine.png",
       alt: "Archi Contemporaine",
       width: 150,
       height: 150,
@@ -92,7 +92,7 @@ export default async function Distinctions() {
   const prixBoisBasseNormandie = {
     title: "Prix Bois Basse Normandie",
     cover_image: {
-      src: "/website/images/distinctions/prix-basse-normandie.png",
+      src: "/images/distinctions/prix-basse-normandie.png",
       alt: "Prix Bois Basse Normandie",
       width: 407,
       height: 407,
@@ -102,7 +102,7 @@ export default async function Distinctions() {
   const salonMaisonBois = {
     title: "Salon Maison Bois",
     cover_image: {
-      src: "/website/images/distinctions/salon-maison-bois.png",
+      src: "/images/distinctions/salon-maison-bois.png",
       alt: "Salon Maison Bois",
       width: 118,
       height: 188,
@@ -112,7 +112,7 @@ export default async function Distinctions() {
   const lauriersConstructionBois = {
     title: "Lauriers de la Construction Bois",
     cover_image: {
-      src: "/website/images/distinctions/lauriers-de-la-construction-bois.png",
+      src: "/images/distinctions/lauriers-de-la-construction-bois.png",
       alt: "Lauriers de la Construction Bois",
       width: 230,
       height: 230,
@@ -122,7 +122,7 @@ export default async function Distinctions() {
   const prixDArchitectures = {
     title: "Prix d'a 10+1",
     cover_image: {
-      src: "/website/images/distinctions/prix-d-architectures.png",
+      src: "/images/distinctions/prix-d-architectures.png",
       alt: "Prix d'a 10+1",
       width: 650,
       height: 650,
@@ -133,7 +133,7 @@ export default async function Distinctions() {
     title:
       "Le Conseil d'architecture, d'urbanisme et de l'environnement du Val-de-Marne",
     cover_image: {
-      src: "/website/images/distinctions/caue.png",
+      src: "/images/distinctions/caue.png",
       alt: "Le Conseil d'architecture, d'urbanisme et de l'environnement du Val-de-Marne",
       width: 480,
       height: 480,
@@ -143,7 +143,7 @@ export default async function Distinctions() {
   const dwell = {
     title: "Dwell",
     cover_image: {
-      src: "/website/images/distinctions/dwell.png",
+      src: "/images/distinctions/dwell.png",
       alt: "Dwell",
       width: 480,
       height: 480,
@@ -153,7 +153,7 @@ export default async function Distinctions() {
   const maisonsPaysannesFrance = {
     title: "Maisons Paysannes de France",
     cover_image: {
-      src: "/website/images/distinctions/maisons-paysannes-de-france.png",
+      src: "/images/distinctions/maisons-paysannes-de-france.png",
       alt: "Maisons Paysannes de France",
       width: 480,
       height: 480,
